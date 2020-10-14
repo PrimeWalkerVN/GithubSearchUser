@@ -27,7 +27,7 @@ const DashBoard = (props) => {
       }
 
     } catch (err) {
-      Noti("error", "Error", err.message);
+      Noti("error", "Error", err.response.data.message);
     }
     setIsLoading(false);
   };

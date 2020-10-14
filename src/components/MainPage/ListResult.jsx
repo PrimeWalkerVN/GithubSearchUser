@@ -16,16 +16,15 @@ const ListResult = (props) => {
   const size = useWindowSize();
   const reposString = size.width > 768 ? "Repositories" : "Repos";
   const clickDetail = async (item) => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       const userRes = await searchUserApi.getUser(item.login);
       context.user.set(userRes.data);
-      setIsLoading(false);
       history.push("/detail");
     } catch (err) {
-      Noti("error", "Error", err.message);
+      Noti("error", "Error", err.response.data.message);
     }
-
+    setIsLoading(false);
   };
   return (
     <div>

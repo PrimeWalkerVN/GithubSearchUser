@@ -30,7 +30,7 @@ const Detail = (props) => {
         setGists(user.public_gists);
         Noti("success", "Get detail", "Success!");
       } catch (err) {
-        Noti("error", "Error", err.message);
+        Noti("error", "Error", err.response.data.message);
       }
       setIsLoading(false);
     };
