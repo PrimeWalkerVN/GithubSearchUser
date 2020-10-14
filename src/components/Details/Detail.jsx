@@ -39,7 +39,7 @@ const Detail = (props) => {
 
   }, [user]);
   return (
-    <div className="bg-gray-100 flex flex-col items-center w-full h-screen">
+    <div className="bg-gray-100 flex flex-col items-center w-full">
       {isLoading && <Loading />}
       <UserInfo user={user} />
       <Info

@@ -36,7 +36,7 @@ const DashBoard = (props) => {
     <div className="m-8 max-w-full flex flex-col items-center">
       {isLoading && <Loading />}
       <NavBar />
-      <div className="w-1/2">
+      <div className="lg:w-1/2 sm:w-full">
         <SearchUser onSubmit={handleSearch} />
         {items.length > 0 ? (
           <div className="pt-8">

@@ -4,11 +4,15 @@ import { List, Card, Modal } from "antd";
 import { AiFillStar, AiOutlineIssuesClose } from "react-icons/ai";
 import CommitPage from "../Commits/CommitPage";
 import { useState } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 
 const UserRepos = (props) => {
   const { repos, user } = props;
   const [openModal, setOpenModal] = useState(false);
   const [itemFullName, setItemFullName] = useState("");
+  const size = useWindowSize();
+  const column = size.width > 1024 ? 3 : 1;
+
   const openCommitPage = (item) => {
     setOpenModal(true);
     setItemFullName(item.full_name);
@@ -19,7 +23,7 @@ const UserRepos = (props) => {
         {`${user.login}'s depositories`}
       </span>
       <List
-        grid={{ gutter: 12, column: 3 }}
+        grid={{ gutter: 12, column: column }}
         dataSource={repos}
         pagination={{ defaultPageSize: 6 }}
         renderItem={(item) => (

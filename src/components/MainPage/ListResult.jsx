@@ -30,25 +30,25 @@ const ListResult = (props) => {
       <List
         header={
           <div className="grid grid-cols-3 gap-4 mx-8">
-            <span className="font-bold text-2xl text-left">Avatar</span>
-            <span className="font-bold text-2xl text-center">User name</span>
-            <span className="font-bold text-2xl text-right">Options</span>
+            <span className="font-bold sm:text-lg md:text-2xl text-left">Avatar</span>
+            <span className="font-bold sm:text-lg md:text-2xl text-center">User name</span>
+            <span className="font-bold sm:text-lg md:text-2xl text-right">Options</span>
           </div>
         }
-        pagination
+        pagination={{ defaultPageSize: 5 }}
         bordered
         dataSource={items}
         renderItem={(item) => (
           <List.Item>
-            <div className="grid grid-cols-3 gap-4 w-full mx-8">
+            <div className="grid grid-cols-3 gap-4 w-full lg:mx-8">
               <Avatar size={64} src={item.avatar_url} />
-              <span className="truncate font-bold text-lg flex justify-center items-center">
+              <span className="truncate font-bold md:text-lg flex justify-center items-center">
                 {item.login}
               </span>
-              <div className="flex justify-end items-center">
+              <div className="flex sm:flex-col justify-end items-center md:flex-row">
                 <button
                   onClick={() => clickDetail(item)}
-                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center mr-4 p-2"
+                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center md:mr-4 p-2"
                 >
                   <span className="text-white font-bold ">Repositories</span>
                 </button>

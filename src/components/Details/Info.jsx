@@ -9,7 +9,7 @@ import { FiUsers } from "react-icons/fi";
 const Info = (props) => {
   const { reposPub, followers, following, gists } = props;
   return (
-    <div className=" w-4/6 flex flex-row justify-between">
+    <div className="sm:w-full lg:w-4/6 flex lg:flex-row sm:flex-col sm:items-center lg:justify-between">
       <InfoCard
         Icon={<AiOutlineCodeSandbox />}
         Num={reposPub}
