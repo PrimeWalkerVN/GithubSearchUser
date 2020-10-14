@@ -5,6 +5,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { useHistory } from "react-router-dom";
 import searchUserApi from "../../api/searchUserApi";
 import { GithubContext } from "../../context/context";
+import useWindowSize from "../../hooks/useWindowSize";
 import Loading from "../Loading";
 import Noti from "../Noti";
 const ListResult = (props) => {
@@ -12,6 +13,8 @@ const ListResult = (props) => {
   const history = useHistory();
   const context = useContext(GithubContext);
   const [isLoading, setIsLoading] = useState(false);
+  const size = useWindowSize();
+  const reposString = size.width > 768 ? "Repositories" : "Repos";
   const clickDetail = async (item) => {
     try {
       setIsLoading(true);
@@ -40,17 +43,17 @@ const ListResult = (props) => {
         dataSource={items}
         renderItem={(item) => (
           <List.Item>
-            <div className="grid grid-cols-3 gap-4 w-full lg:mx-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-2 w-full lg:mx-8 truncate">
               <Avatar size={64} src={item.avatar_url} />
-              <span className="truncate font-bold md:text-lg flex justify-center items-center">
+              <span className="truncate sm:text-xs font-bold md:text-lg flex justify-center items-center">
                 {item.login}
               </span>
               <div className="flex sm:flex-col justify-end items-center md:flex-row">
                 <button
                   onClick={() => clickDetail(item)}
-                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center md:mr-4 p-2"
+                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center md:mr-4 p-2 sm:mb-2"
                 >
-                  <span className="text-white font-bold ">Repositories</span>
+                  <span className="text-white font-bold">{reposString}</span>
                 </button>
                 <button className="bg-black hover:bg-gray-700 font-bold rounded-full inline-flex items-center ">
                   <a
