@@ -23,7 +23,6 @@ const DashBoard = (props) => {
       if (response.status === 200) {
         setItems(response.data.items);
         context.searchItems.set(response.data.items);
-        Noti("success", "Search data", "Success!");
       }
 
     } catch (err) {

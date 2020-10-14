@@ -18,7 +18,6 @@ const CommitPage = (props) => {
                 };
                 const response = await reposApi.getCommits(itemFullName, params);
                 if (response.status === 200) setItems(response.data);
-                Noti("success", "Get Commits", "Success");
             } catch (err) {
                 Noti("error", "Error", err.message);
             }

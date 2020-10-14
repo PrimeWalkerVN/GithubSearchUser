@@ -28,7 +28,6 @@ const Detail = (props) => {
         setFollowers(user.followers);
         setFollowing(user.following);
         setGists(user.public_gists);
-        Noti("success", "Get detail", "Success!");
       } catch (err) {
         Noti("error", "Error", err.response.data.message);
       }
