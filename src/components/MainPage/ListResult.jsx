@@ -43,9 +43,9 @@ const ListResult = (props) => {
         dataSource={items}
         renderItem={(item) => (
           <List.Item>
-            <div className="grid grid-cols-3 gap-4 sm:gap-2 w-full lg:mx-8 truncate">
+            <div className="grid grid-cols-3 gap-4 sm:gap-2 w-full lg:mx-8">
               <Avatar size={64} src={item.avatar_url} />
-              <span className="truncate sm:text-xs font-bold md:text-lg flex justify-center items-center">
+              <span className="md:truncate sm:break-all sm:text-xs font-bold md:text-lg flex justify-center items-center">
                 {item.login}
               </span>
               <div className="flex sm:flex-col justify-end items-center md:flex-row">
