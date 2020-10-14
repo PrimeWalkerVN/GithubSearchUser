@@ -51,7 +51,7 @@ const ListResult = (props) => {
               <div className="flex sm:flex-col justify-end items-center md:flex-row">
                 <button
                   onClick={() => clickDetail(item)}
-                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center md:mr-4 p-2 sm:mb-2"
+                  className="bg-blue-500 hover:bg-blue-700 font-bold rounded-lg inline-flex items-center md:mr-4 p-2"
                 >
                   <span className="text-white font-bold">{reposString}</span>
                 </button>
