@@ -1,5 +1,5 @@
 ### Host Vercel [https://github-search-user.vercel.app]
-
+App can work on PC, tablet and mobile.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
