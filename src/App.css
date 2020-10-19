@@ -1,5 +1,4 @@
 @import './assets/styles/main.css';
-@import '~antd/dist/antd.css';
 
 .modal-loading .ant-modal-content {
     background: none;

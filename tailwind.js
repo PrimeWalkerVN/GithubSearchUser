@@ -5,7 +5,14 @@ module.exports = {
     // defaultLineHeights: true,
     // standardFontWeights: true
   },
-  purge: [],
+  purge: {
+    mode: 'all',
+    content: [
+      './src/**/*.jsx',
+      './src/**/*.js',
+      'public/**/*.html',
+    ],
+  },
   target: "relaxed",
   prefix: "",
   important: false,
