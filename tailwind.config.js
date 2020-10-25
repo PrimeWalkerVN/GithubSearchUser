@@ -6,6 +6,7 @@ module.exports = {
     // standardFontWeights: true
   },
   purge: {
+    enabled: true,
     mode: 'all',
     content: [
       './src/**/*.jsx',
